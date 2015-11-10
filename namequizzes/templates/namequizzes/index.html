@@ -1,0 +1,9 @@
+{% if quizzes %}
+  <ul>
+  {% for quiz in quizzes %}
+    <li><a href="{% url 'namequizzes:detail' quiz.id %}">{{ quiz.name }}</a></li>
+  {% endfor %}
+  </ul>
+{% else %}
+  <p>No quizzes available.</p>
+{% endif %}

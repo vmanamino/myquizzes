@@ -1,0 +1,7 @@
+<h1>{{ quiz.name }}</h1>
+<h1>Here's the facebook user name</h1>
+{% if quiz.username %}
+<h1>{{ quiz.username }}</h1>
+{% else %}
+<h1>User has not signed up through facebook</h1>
+{% endif %}
