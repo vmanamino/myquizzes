@@ -1,15 +1,18 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.template import RequestContext, loader
-from django.shortcuts import get_object_or_404, render
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
+from django.views import generic
+
 from .models import Quiz
 
-def index(request):
-  quizzes = Quiz.objects.all()
-  template = loader.get_template('namequizzes/index.html')
-  context = { 'quizzes': quizzes }
-  return render(request, 'namequizzes/index.html', context)
+class IndexView(generic.ListView):
+  template_name = 'namequizzes/index.html'
+  context_object_name = 'quizzes'
 
-def detail(request, quiz_id):
-  quiz = get_object_or_404(Quiz, pk=quiz_id)
-  return render(request, 'namequizzes/detail.html', {'quiz': quiz})
+  def get_queryset(self):
+    return Quiz.objects.all()
+
+class DetailView(generic.DetailView):
+  model = Quiz
+  template_name = 'namequizzes/detail.html'
