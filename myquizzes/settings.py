@@ -18,9 +18,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
-
+from YamJam import yamjam
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ')-d4-09&c*teqq*mgsxduouxc6zzi#7374qf(bsrs2(ibfo)6w'
+SECRET_KEY = yamjam()['myquizzes']['secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
