@@ -1,7 +1,15 @@
 <h1>{{ quiz.name }}</h1>
 <h1>Here's the facebook user name</h1>
-{% if quiz.username %}
-<h1>{{ quiz.username }}</h1>
-{% else %}
-<h1>User has not signed up through facebook</h1>
-{% endif %}
+<p>
+   {% if user and not user.is_anonymous %}
+     Hello {{ user.get_full_name|default:user.username }}!
+     <li>
+<!--        <a href="{% url 'social:disconnect' 'facebook' %}?next-{{ request.path }}">Logout</a> -->
+       <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
+     </li>
+   {% else %}
+     <li>
+       <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">Login with Facebook</a>
+     </li>
+   {% endif %}
+</p>
