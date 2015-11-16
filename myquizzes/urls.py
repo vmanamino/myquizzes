@@ -17,7 +17,8 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^namequizzes/', include('namequizzes.urls', namespace='namequizzes')),
+    url(r'', include('namequizzes.urls', namespace='namequizzes')),
+#     url(r'^namequizzes/', include('namequizzes.urls', namespace='namequizzes')),
     url(r'^admin/', include(admin.site.urls)),
     url('', include('django.contrib.auth.urls', namespace='auth')),
     url('', include('social.apps.django_app.urls', namespace='social')),
