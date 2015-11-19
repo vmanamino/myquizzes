@@ -1,0 +1,16 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>Your {% block title %}{% endblock %}</title>
+</head>
+{% block navigation %}{% endblock %}
+<body>
+    <h1>Go ahead and play!</h1>
+    {% block subtitle %}{% endblock %}
+    {% block content %}{% endblock %}
+    {% block footer %}
+    <hr>
+    <p>Thanks for visiting my/your quizzes.</p>
+    {% endblock %}
+</body>
+</html>

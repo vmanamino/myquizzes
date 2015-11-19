@@ -1,3 +1,10 @@
+{% extends "namequizzes/base.html" %}
+
+{% block title %}Quizzes{% endblock %}
+
+{% block subtitle %}You have {{ quizzes.count }} quizzes to choose from{% endblock %}
+
+{% block content %}
 {% if quizzes %}
   <ul>
   {% for quiz in quizzes %}
@@ -7,3 +14,4 @@
 {% else %}
   <p>No quizzes available.</p>
 {% endif %}
+{% endblock %}

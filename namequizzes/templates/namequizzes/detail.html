@@ -1,3 +1,12 @@
+{% extends "namequizzes/base.html" %}
+
+{% block title %}Quiz {{ quiz.id }}{% endblock %}
+
+{% block navigation %}<li><a href="{% url 'namequizzes:index' %}">Home</a></li>{% endblock %}
+
+{% block subtitle %}You picked the following quiz{% endblock %}
+
+{% block content %}
 <h1>{{ quiz.name }}</h1>
 <h1>Here's the facebook user name</h1>
 <p>
@@ -13,3 +22,4 @@
      </li>
    {% endif %}
 </p>
+{% endblock %}
