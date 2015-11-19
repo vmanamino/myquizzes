@@ -3,8 +3,9 @@
 <head>
     <title>Your {% block title %}{% endblock %}</title>
 </head>
-{% block navigation %}{% endblock %}
+
 <body>
+    {% block navigation %}{% endblock %}
     <h1>Go ahead and play!</h1>
     {% block subtitle %}{% endblock %}
     {% block content %}{% endblock %}
